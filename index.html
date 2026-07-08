@@ -4,85 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WhyPlanet — 와이플래닛</title>
-<meta name="description" content="WhyPlanet(와이플래닛) — 캐주얼 모바일 게임을 만드는 인디 게임 스튜디오. Makers of Sky Bounce.">
+<meta name="description" content="WhyPlanet(와이플래닛) — 작은 행성에서 즐거운 모바일 게임을 만듭니다. Makers of Sky Bounce.">
+<meta property="og:title" content="WhyPlanet — 와이플래닛">
+<meta property="og:description" content="A tiny planet crafting playful mobile games. Makers of Sky Bounce.">
+<meta property="og:url" content="https://why-planet.github.io/">
+<meta property="og:image" content="https://why-planet.github.io/assets/skybounce-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='14' fill='%23ffb84d'/%3E%3Cellipse cx='32' cy='32' rx='26' ry='9' fill='none' stroke='%23ffb84d' stroke-opacity='0.55' stroke-width='3' transform='rotate(-18 32 32)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #0b3c5d;
-  --ink-dim: rgba(11, 60, 93, 0.72);
-  --sky: #3887c8;
-  --bg: #eef6fd;
-  --card: #ffffff;
+  --bg: #0b0c12;
+  --surface: #12141d;
+  --line: rgba(255, 255, 255, 0.08);
+  --ink: #f2f3f7;
+  --ink-dim: #a9aebc;
+  --amber: #ffb84d;
+  --amber-deep: #ff9e2e;
 }
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
-  background: linear-gradient(180deg, #d8edfc 0%, var(--bg) 40%);
+  background: var(--bg);
   color: var(--ink);
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
   line-height: 1.7;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
-.wrap { max-width: 720px; margin: 0 auto; padding: 56px 20px 80px; }
-header { text-align: center; margin-bottom: 40px; }
-header h1 { font-size: 34px; margin: 8px 0 4px; letter-spacing: -0.5px; }
-header .sub { color: var(--ink-dim); font-size: 15px; }
-.card {
-  background: var(--card);
-  border: 2px solid rgba(86, 160, 210, 0.45);
-  border-radius: 16px;
-  padding: 28px 26px;
-  margin-bottom: 20px;
+/* ---- cosmic backdrop: layered glows + starfield ---- */
+.cosmos {
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(1100px 520px at 78% -10%, rgba(255, 158, 46, 0.13), transparent 60%),
+    radial-gradient(900px 600px at -8% 92%, rgba(90, 110, 255, 0.10), transparent 60%),
+    var(--bg);
 }
-.game-title { font-size: 22px; margin: 0 0 6px; }
-.game-desc { font-size: 15px; color: var(--ink-dim); margin: 0 0 14px; }
+.cosmos::after {
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1.2px 1.2px at 22% 28%, rgba(255,255,255,0.55), transparent 100%),
+    radial-gradient(1px 1px at 64% 12%, rgba(255,255,255,0.4), transparent 100%),
+    radial-gradient(1.4px 1.4px at 83% 42%, rgba(255,255,255,0.5), transparent 100%),
+    radial-gradient(1px 1px at 39% 64%, rgba(255,255,255,0.35), transparent 100%),
+    radial-gradient(1.2px 1.2px at 9% 47%, rgba(255,255,255,0.45), transparent 100%),
+    radial-gradient(1px 1px at 71% 79%, rgba(255,255,255,0.4), transparent 100%),
+    radial-gradient(1.3px 1.3px at 50% 91%, rgba(255,255,255,0.35), transparent 100%),
+    radial-gradient(1px 1px at 91% 68%, rgba(255,255,255,0.45), transparent 100%);
+}
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+/* ---- hero ---- */
+.hero { padding: 108px 0 84px; }
+.logomark { width: 92px; height: 92px; margin-bottom: 34px; }
+.logomark .orbit {
+  transform-origin: 46px 46px;
+  animation: spin 26s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .logomark .orbit { animation: none; } }
+.eyebrow {
+  font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--amber); font-weight: 500; margin-bottom: 18px;
+}
+h1 {
+  font-size: clamp(38px, 7vw, 62px);
+  line-height: 1.15; letter-spacing: -0.02em; font-weight: 700;
+  margin-bottom: 22px; word-break: keep-all;
+}
+h1 .accent { color: var(--amber); }
+.tagline { font-size: 18px; color: var(--ink-dim); max-width: 560px; word-break: keep-all; }
+
+/* ---- sections ---- */
+section { padding: 30px 0 72px; }
+.section-label {
+  font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-dim); font-weight: 500; margin-bottom: 26px;
+  display: flex; align-items: center; gap: 14px;
+}
+.section-label::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+
+/* ---- game card ---- */
+.game-card {
+  display: flex; gap: 28px; align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 30px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.game-card:hover {
+  border-color: rgba(255, 184, 77, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+.game-icon {
+  width: 128px; height: 128px; border-radius: 28px; flex-shrink: 0;
+  box-shadow: 0 10px 34px rgba(255, 158, 46, 0.22);
+}
+.game-info h2 { font-size: 26px; letter-spacing: -0.01em; margin-bottom: 8px; }
+.game-info p { font-size: 15px; color: var(--ink-dim); margin-bottom: 16px; word-break: keep-all; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; }
 .badge {
-  display: inline-block;
-  font-size: 13px;
-  color: var(--sky);
-  border: 1.5px solid rgba(56, 135, 200, 0.5);
-  border-radius: 999px;
-  padding: 3px 14px;
-  margin-right: 6px;
-  margin-bottom: 4px;
+  font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em;
+  color: var(--amber); background: rgba(255, 184, 77, 0.09);
+  border: 1px solid rgba(255, 184, 77, 0.35);
+  border-radius: 999px; padding: 5px 14px;
 }
-h2 { font-size: 18px; margin: 0 0 10px; }
-p, li { font-size: 15px; color: var(--ink-dim); }
-ul { margin: 0; padding-left: 20px; }
-a { color: var(--sky); }
-footer { text-align: center; color: var(--ink-dim); font-size: 13px; margin-top: 36px; }
+@media (max-width: 620px) {
+  .game-card { flex-direction: column; align-items: flex-start; }
+  .game-icon { width: 96px; height: 96px; border-radius: 22px; }
+}
+
+/* ---- contact ---- */
+.contact p { color: var(--ink-dim); font-size: 15px; margin-bottom: 10px; word-break: keep-all; }
+.contact a.mail {
+  font-size: clamp(20px, 4vw, 28px); font-weight: 700; letter-spacing: -0.01em;
+  color: var(--ink); text-decoration: none;
+  border-bottom: 2px solid rgba(255, 184, 77, 0.5);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.contact a.mail:hover { color: var(--amber); border-color: var(--amber); }
+
+/* ---- footer ---- */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 34px 0 56px;
+  display: flex; flex-wrap: wrap; gap: 10px 26px;
+  align-items: center; justify-content: space-between;
+  font-size: 13.5px; color: var(--ink-dim);
+}
+footer nav { display: flex; gap: 22px; }
+footer a { color: var(--ink-dim); text-decoration: none; transition: color 0.2s ease; }
+footer a:hover { color: var(--amber); }
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <h1>WhyPlanet</h1>
-  <div class="sub">와이플래닛 · Indie Game Studio</div>
-</header>
+<div class="cosmos" aria-hidden="true"></div>
 
-<div class="card">
-  <h2 class="game-title">Sky Bounce</h2>
-  <p class="game-desc">
-    탭 한 번으로 하늘을 나는 캐주얼 아케이드 게임.<br>
-    A one-tap sky-hopping casual arcade game.
-  </p>
-  <span class="badge">App Store — Coming Soon</span>
-  <span class="badge">Google Play — Coming Soon</span>
-</div>
+<main class="wrap">
+  <header class="hero">
+    <svg class="logomark" viewBox="0 0 92 92" fill="none" aria-hidden="true">
+      <circle cx="46" cy="46" r="21" fill="url(#planetFill)"/>
+      <g class="orbit">
+        <ellipse cx="46" cy="46" rx="38" ry="13.5" stroke="rgba(255,184,77,0.5)" stroke-width="1.6" transform="rotate(-18 46 46)"/>
+        <circle cx="79" cy="33" r="3.4" fill="#ffb84d"/>
+      </g>
+      <defs>
+        <radialGradient id="planetFill" cx="0.35" cy="0.3" r="1">
+          <stop offset="0%" stop-color="#ffd28a"/>
+          <stop offset="55%" stop-color="#ffb84d"/>
+          <stop offset="100%" stop-color="#e07f1b"/>
+        </radialGradient>
+      </defs>
+    </svg>
+    <div class="eyebrow">WhyPlanet · 와이플래닛</div>
+    <h1>작은 행성에서,<br><span class="accent">즐거운 게임</span>을 만듭니다</h1>
+    <p class="tagline">A tiny planet crafting playful mobile games — small in size, big on joy.</p>
+  </header>
 
-<div class="card">
-  <h2>법적 고지 · Legal</h2>
-  <ul>
-    <li><a href="/skybounce-legal/privacy.html">Sky Bounce 개인정보처리방침 · Privacy Policy</a></li>
-    <li><a href="/skybounce-legal/terms.html">Sky Bounce 이용약관 · Terms of Service</a></li>
-  </ul>
-</div>
+  <section id="games">
+    <div class="section-label">Games</div>
+    <div class="game-card">
+      <img class="game-icon" src="assets/skybounce-icon.png" alt="Sky Bounce 앱 아이콘 — 하늘을 나는 노란 하늘정령 채채" width="128" height="128">
+      <div class="game-info">
+        <h2>Sky Bounce</h2>
+        <p>탭 한 번으로 하늘을 나는 캐주얼 아케이드. 하늘정령 채채와 함께 더 높이, 더 멀리.<br>
+        A one-tap sky-hopping arcade adventure.</p>
+        <div class="badges">
+          <span class="badge">App Store — Coming Soon</span>
+          <span class="badge">Google Play — Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-  <h2>문의 · Contact</h2>
-  <p><a href="mailto:whyplanet.dev@gmail.com">whyplanet.dev@gmail.com</a></p>
-</div>
+  <section id="contact" class="contact">
+    <div class="section-label">Contact</div>
+    <p>협업 제안, 게임 문의, 무엇이든 환영합니다.</p>
+    <a class="mail" href="mailto:whyplanet.dev@gmail.com">whyplanet.dev@gmail.com</a>
+  </section>
 
-<footer>© 2026 WhyPlanet · 와이플래닛</footer>
-</div>
+  <footer>
+    <div>© 2026 WhyPlanet · 와이플래닛</div>
+    <nav>
+      <a href="/skybounce-legal/privacy.html">Privacy Policy</a>
+      <a href="/skybounce-legal/terms.html">Terms of Service</a>
+    </nav>
+  </footer>
+</main>
 </body>
 </html>
