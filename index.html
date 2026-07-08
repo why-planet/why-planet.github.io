@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhyPlanet — 와이플래닛</title>
+<meta name="description" content="WhyPlanet(와이플래닛) — 캐주얼 모바일 게임을 만드는 인디 게임 스튜디오. Makers of Sky Bounce.">
+<style>
+:root {
+  --ink: #0b3c5d;
+  --ink-dim: rgba(11, 60, 93, 0.72);
+  --sky: #3887c8;
+  --bg: #eef6fd;
+  --card: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #d8edfc 0%, var(--bg) 40%);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 56px 20px 80px; }
+header { text-align: center; margin-bottom: 40px; }
+header h1 { font-size: 34px; margin: 8px 0 4px; letter-spacing: -0.5px; }
+header .sub { color: var(--ink-dim); font-size: 15px; }
+.card {
+  background: var(--card);
+  border: 2px solid rgba(86, 160, 210, 0.45);
+  border-radius: 16px;
+  padding: 28px 26px;
+  margin-bottom: 20px;
+}
+.game-title { font-size: 22px; margin: 0 0 6px; }
+.game-desc { font-size: 15px; color: var(--ink-dim); margin: 0 0 14px; }
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--sky);
+  border: 1.5px solid rgba(56, 135, 200, 0.5);
+  border-radius: 999px;
+  padding: 3px 14px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+h2 { font-size: 18px; margin: 0 0 10px; }
+p, li { font-size: 15px; color: var(--ink-dim); }
+ul { margin: 0; padding-left: 20px; }
+a { color: var(--sky); }
+footer { text-align: center; color: var(--ink-dim); font-size: 13px; margin-top: 36px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>WhyPlanet</h1>
+  <div class="sub">와이플래닛 · Indie Game Studio</div>
+</header>
+
+<div class="card">
+  <h2 class="game-title">Sky Bounce</h2>
+  <p class="game-desc">
+    탭 한 번으로 하늘을 나는 캐주얼 아케이드 게임.<br>
+    A one-tap sky-hopping casual arcade game.
+  </p>
+  <span class="badge">App Store — Coming Soon</span>
+  <span class="badge">Google Play — Coming Soon</span>
+</div>
+
+<div class="card">
+  <h2>법적 고지 · Legal</h2>
+  <ul>
+    <li><a href="/skybounce-legal/privacy.html">Sky Bounce 개인정보처리방침 · Privacy Policy</a></li>
+    <li><a href="/skybounce-legal/terms.html">Sky Bounce 이용약관 · Terms of Service</a></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>문의 · Contact</h2>
+  <p><a href="mailto:whyplanet.dev@gmail.com">whyplanet.dev@gmail.com</a></p>
+</div>
+
+<footer>© 2026 WhyPlanet · 와이플래닛</footer>
+</div>
+</body>
+</html>
