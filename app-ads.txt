@@ -1,0 +1,1 @@
+# WhyPlanet app-ads.txt — lines will be added as ad networks are activated
