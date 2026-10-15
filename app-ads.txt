@@ -1,6 +1,6 @@
 # WhyPlanet app-ads.txt — covers all WhyPlanet games
 # Updated 2026-10-15
-ownerdomain=why-planet.github.io
+ownerdomain=whyplanet.net
 
 # Google AdMob (WhyPlanet publisher account)
 google.com, pub-9638849628966340, DIRECT, f08c47fec0942fa0
