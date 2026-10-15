@@ -5,6 +5,9 @@ ownerdomain=why-planet.github.io
 # Google AdMob (WhyPlanet publisher account)
 google.com, pub-9638849628966340, DIRECT, f08c47fec0942fa0
 
+# Meta Audience Network (WhyPlanet business)
+facebook.com, 1971803453487639, DIRECT, c3e20eee3f780d68
+
 # Unity Ads (Unity LevelPlay mediation)
 adwmg.com, 159512, RESELLER, c9688a22012618e7
 appads.in, 106246, RESELLER
