@@ -276,7 +276,7 @@ footer a.privacy { color: var(--ink); font-weight: 700; }
           <p class="game-desc">짬 날 때 톡톡 즐기는 귀여운 원버튼 아케이드. 탭 한 번이면 동글동글 하늘정령이 폴짝! 초원에서 노을, 수정, 구름, 밤하늘, 우주, 성운까지 바뀌는 하늘을 날며 파이프 사이를 통과하세요. 50종이 넘는 스킨, 매일 바뀌는 미션과 출석 보상, 1:1 PvP 대전과 글로벌 랭킹이 기다려요.</p>
           <p class="game-desc en">Tap once and a round little sky spirit bounces up. Glide between the pipes as the sky shifts from meadow and sunset to space and nebula. Collect 50+ skins, clear daily missions, and take on fair 1:1 PvP matches and the global leaderboard.</p>
           <div class="chips">
-            <span class="chip status">출시 예정 · Coming soon</span>
+            <span class="chip status">Google Play 출시 · iOS 출시 예정</span>
             <span class="chip">iOS · Android</span>
             <span class="chip">PvP · 글로벌 랭킹</span>
           </div>
@@ -367,9 +367,9 @@ footer a.privacy { color: var(--ink); font-weight: 700; }
 </main>
 <script>
 // ===== Store launch config — flip to true on launch day =====
-const STORES_LIVE = false;
+const STORES_LIVE = true;   // 2026-10-22: Google Play 공개 · App Store 심사 중 → ios "" 로 「출시 예정」 유지
 const STORE_URLS = {
-  ios: "https://apps.apple.com/app/id6761355306",                                  // App Store (App ID 6761355306)
+  ios: "",                                                                          // App Store 공개 날 → "https://apps.apple.com/app/id6761355306" (App ID 6761355306)
   android: "https://play.google.com/store/apps/details?id=com.whyplanet.skybounce"  // Google Play
 };
 // ============================================================
@@ -389,7 +389,9 @@ const STORE_URLS = {
       if (small) small.textContent = el.dataset.store === "ios" ? "Download on the" : "Get it on";
       el.replaceWith(a);
     });
-    document.querySelectorAll("#sky-bounce .chip.status").forEach(function (c) { c.remove(); });
+    // 상태 칩은 두 스토어가 모두 열렸을 때만 지운다(한쪽만 열린 동안은 정적 문구 「Google Play 출시 · iOS 출시 예정」 그대로).
+    var allLive = Object.keys(STORE_URLS).every(function (k) { return !!STORE_URLS[k]; });
+    if (allLive) document.querySelectorAll("#sky-bounce .chip.status").forEach(function (c) { c.remove(); });
   }
 
   // Screenshot language toggle (KO default; EN images load only when chosen)
