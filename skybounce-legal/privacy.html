@@ -11,7 +11,7 @@
 <div class="wrap">
 <header>
   <h1>개인정보처리방침</h1>
-  <div class="sub">스카이 바운스(Sky Bounce) · 시행일: 2026년 9월 27일 (최초 시행 2026년 7월 3일)</div>
+  <div class="sub">스카이 바운스(Sky Bounce) · 시행일: 2026년 11월 7일 (최초 시행 2026년 7월 3일)</div>
 </header>
 <div class="nav"><a href="/">홈</a> · <a href="terms.html">이용약관</a> · <a href="account-deletion.html">계정 삭제</a> · <a href="#en">English</a></div>
 
@@ -23,12 +23,13 @@
 <tr><th>항목</th><th>내용</th><th>목적</th></tr>
 <tr><td>계정 식별자</td><td>게스트(익명) 계정 ID(자동 생성 UUID)</td><td>게임 진행 저장, 계정 복구</td></tr>
 <tr><td>소셜 로그인 정보 (선택)</td><td>Apple/Google 로그인 시 제공되는 계정 식별자, 이메일(제공 시)</td><td>계정 연동 및 기기 간 데이터 복구</td></tr>
-<tr><td>닉네임</td><td>이용자가 정한 닉네임 — <strong>리더보드와 PvP 대전에서 다른 이용자에게 공개됩니다</strong></td><td>랭킹 표시, 대전 상대 표시</td></tr>
-<tr><td>게임 데이터</td><td>점수·플레이 기록, 게임 진행도, 보유 재화·스킨, 미션·업적, 설정</td><td>클라우드 저장, 리더보드·PvP 운영, 서비스 제공</td></tr>
+<tr><td>닉네임</td><td>이용자가 정한 닉네임 — <strong>리더보드와 1:1 레이스에서 다른 이용자에게 공개됩니다</strong></td><td>랭킹 표시, 레이스 상대 표시</td></tr>
+<tr><td>게임 데이터</td><td>점수·플레이 기록(1:1 레이스의 비행 기록 포함), 게임 진행도, 보유 재화·스킨, 미션·업적, 설정</td><td>클라우드 저장, 리더보드·1:1 레이스 운영(비행 기록을 다른 이용자의 레이스 상대로 재생), 서비스 제공</td></tr>
 <tr><td>구매 기록</td><td>인앱 구매 내역과 영수증(Apple App Store / Google Play 발행)</td><td>구매 검증 및 아이템 지급, 부정 방지 (카드 등 결제수단 정보에는 접근하지 않음)</td></tr>
 <tr><td>기기 정보</td><td>기기 모델, OS 버전, 언어, 앱 버전, 기기·설치 식별자</td><td>호환성 확인, 오류 분석, 부정 방지</td></tr>
 <tr><td>광고 식별자</td><td>iOS: 앱 추적 투명성(ATT) <strong>동의 시에만</strong> IDFA · Android: Google 광고 ID(GAID)</td><td>광고 파트너의 광고 제공, 광고 빈도 제한, 광고 성과 측정, 부정 방지</td></tr>
-<tr><td>이용 분석 정보</td><td>게임 내 이벤트(플레이 시작·종료, 구매, 화면 이동 등), 세션 정보</td><td>게임 개선, 통계 분석 (Unity Gaming Services)</td></tr>
+<tr><td>이용 분석 정보</td><td>게임 내 이벤트(튜토리얼 진행, 플레이 시작·종료와 결과, 화면 이동, 광고 시청, 구매 시도·결과 등), 세션 정보, 분석용 앱 인스턴스 식별자</td><td>게임 개선, 통계 분석 (Google Analytics for Firebase, Unity Gaming Services)</td></tr>
+<tr><td>유입 경로 정보</td><td>게임 설치·실행으로 이어진 캠페인·링크 정보(광고 캠페인, 공유 링크 등)</td><td>마케팅 효과 측정 (Google Analytics for Firebase)</td></tr>
 <tr><td>대략적 위치</td><td>IP 주소로 추정되는 국가·지역 수준 위치 (GPS 등 정밀 위치는 수집하지 않음)</td><td>국가별 서비스 제공, 광고·분석, 부정 방지</td></tr>
 <tr><td>오류·진단 정보</td><td>앱 충돌 및 오류 로그, 성능 진단 정보</td><td>안정성 개선, 오류 수정</td></tr>
 </table>
@@ -38,6 +39,7 @@
 <ul>
 <li><strong>Supabase</strong> — 계정 인증, 게임 데이터 서버 저장 (<a href="https://supabase.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
 <li><strong>Unity Gaming Services (Unity Analytics)</strong> — 게임 이용 분석, 진단 (<a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Google (Google Analytics for Firebase · BigQuery)</strong> — 게임 이용 분석, 마케팅 효과 측정 (<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">방침</a>). 분석 정보에는 닉네임·이메일·계정 ID 등 이용자를 직접 식별하는 정보를 담지 않으며, 분석 이벤트는 약관에 동의한 뒤에만 수집합니다.</li>
 <li><strong>Apple</strong> — Apple 로그인, App Store 결제 처리 (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">방침</a>)</li>
 <li><strong>Google</strong> — Google 로그인, Google Play 결제 처리 (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">방침</a>)</li>
 </ul>
@@ -47,14 +49,21 @@
 <ul>
 <li><strong>Unity LevelPlay (ironSource)</strong> — 광고 미디에이션 (<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">방침</a>)</li>
 <li><strong>Unity Ads</strong> — 광고 네트워크 (<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Google AdMob</strong> — 광고 네트워크 (<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Digital Turbine (DT Exchange)</strong> — 광고 네트워크 (<a href="https://www.digitalturbine.com/legal/privacy-policy" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Liftoff Monetize (Vungle)</strong> — 광고 네트워크 (<a href="https://liftoff.io/privacy-policy/" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Meta Audience Network</strong> — 광고 네트워크 (<a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>Mintegral</strong> — 광고 네트워크 (<a href="https://www.mintegral.com/en/privacy" target="_blank" rel="noopener">방침</a>)</li>
+<li><strong>InMobi</strong> — 광고 네트워크 (<a href="https://advertising.inmobi.com/privacy-policy" target="_blank" rel="noopener">방침</a>)</li>
 </ul>
-<p>광고 파트너(예: AppLovin, Google AdMob)는 추가될 수 있으며, 추가 시 이 목록을 갱신합니다. 맞춤형 광고는 iOS에서 추적을 허용하지 않거나(설정 → 개인정보 보호 및 보안 → 추적), Android에서 광고 ID를 재설정·삭제하여(설정 → 개인정보 보호 → 광고, 또는 설정 → Google → 광고) 거부할 수 있습니다. 이 경우에도 광고는 표시될 수 있으나 맞춤형으로 제공되지 않습니다.</p>
+<p>광고 파트너는 추가·변경될 수 있으며, 그때 이 목록을 갱신합니다. 맞춤형 광고는 iOS에서 추적을 허용하지 않거나(설정 → 개인정보 보호 및 보안 → 추적), Android에서 광고 ID를 재설정·삭제하여(설정 → 개인정보 보호 → 광고, 또는 설정 → Google → 광고) 거부할 수 있습니다. 이 경우에도 광고는 표시될 수 있으나 맞춤형으로 제공되지 않습니다.</p>
 
 <h2>4. 개인정보의 국외 이전</h2>
-<p>서비스 제공을 위해 정보가 국외 서버에 저장·처리됩니다: Supabase(게임 서버, 호주 리전), Unity(분석·광고, 미국 등), Apple·Google(로그인·결제). 이전 항목은 위 1항의 정보 중 각 서비스 제공에 필요한 범위이며, 게임 이용 시 네트워크를 통해 이전되고 각 서비스의 방침에 따른 기간 또는 계정 삭제 시까지 보관됩니다. 국외 이전을 원하지 않으시면 계정을 삭제하고 이용을 중단할 수 있으나, 이 경우 서비스를 이용할 수 없습니다.</p>
+<p>서비스 제공을 위해 정보가 국외 서버에 저장·처리됩니다: Supabase(게임 서버, 호주 리전), Unity(분석·광고, 미국 등), Google(분석, 미국), 위 3항의 광고 파트너(광고 제공·측정, 미국 등 각 사 서버), Apple·Google(로그인·결제). 이전 항목은 위 1항의 정보 중 각 서비스 제공에 필요한 범위이며, 게임 이용 시 네트워크를 통해 이전되고 각 서비스의 방침에 따른 기간 또는 계정 삭제 시까지 보관됩니다. 국외 이전을 원하지 않으시면 계정을 삭제하고 이용을 중단할 수 있으나, 이 경우 서비스를 이용할 수 없습니다.</p>
+<p><strong>분석(Google Analytics for Firebase)</strong> — 이전받는 자: Google LLC(<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">개인정보 문의</a>) · 이전 국가: 미국 · 이전 일시와 방법: 게임 이용 시 네트워크(TLS 암호화)로 수시 전송 · 이전 항목: 분석용 앱 인스턴스 식별자, 기기 정보, 게임 이용 기록, 유입 경로 정보, 대략적 위치, 광고 식별자(iOS는 추적 허용 시) · 이용 목적: 이용 분석, 마케팅 효과 측정 · 보유 기간: 수집일로부터 14개월(분석용 별도 저장소 사본도 이 기간 안에서 보관).</p>
 
 <h2>5. 보관 및 파기</h2>
-<p>수집된 정보는 서비스 제공 기간 동안 보관됩니다. 게임 내 <strong>홈 화면 메뉴(☰) → 계정 설정 → 계정 삭제</strong>를 통해 언제든 계정과 모든 데이터를 영구 삭제할 수 있으며, 삭제 시 서버에서 즉시 파기됩니다. 다만 구매 검증·부정 방지 기록은 관련 법령상 보존 의무 범위 내에서만 보관 후 파기합니다.</p>
+<p>수집된 정보는 서비스 제공 기간 동안 보관됩니다. 게임 내 <strong>홈 화면 메뉴(☰) → 계정 설정 → 계정 삭제</strong>를 통해 언제든 계정과 모든 데이터를 영구 삭제할 수 있으며, 삭제 시 서버에서 즉시 파기됩니다. 다만 구매 검증·부정 방지 기록은 관련 법령상 보존 의무 범위 내에서만 보관 후 파기합니다. 이용 분석 정보는 계정과 연결하지 않은 분석용 앱 인스턴스 식별자로만 보관되어 계정 삭제와 함께 지워지지 않으며, 수집일로부터 14개월이 지나면 자동 삭제됩니다. 1:1 레이스 비행 기록(점수·스킨 포함)은 계정 삭제 시 닉네임을 무작위 이름으로 바꿔 계정과 분리한 뒤, 다른 이용자의 레이스 상대로 계속 쓰일 수 있습니다.</p>
 
 <h2>6. 아동의 개인정보</h2>
 <p>게임은 만 13세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
@@ -71,33 +80,34 @@
 
 <div class="card lang-divider" id="en">
 <h2>Privacy Policy (English)</h2>
-<p>WhyPlanet ("we") operates the mobile game <strong>Sky Bounce</strong>. This policy explains what information the game collects and how it is used and shared. Effective date: September 27, 2026 (first effective July 3, 2026).</p>
+<p>WhyPlanet ("we") operates the mobile game <strong>Sky Bounce</strong>. This policy explains what information the game collects and how it is used and shared. Effective date: November 7, 2026 (first effective July 3, 2026).</p>
 
 <h2>1. Information We Collect</h2>
 <ul>
 <li><strong>Account identifier</strong> — an anonymous guest account ID (auto-generated UUID), used for save data and account recovery.</li>
 <li><strong>Social sign-in data (optional)</strong> — when you sign in with Apple or Google, we receive the account identifier and email (if you choose to share it) to link your progress across devices.</li>
-<li><strong>Nickname</strong> — the name you choose. <strong>It is shown publicly to other players on leaderboards and in PvP matches.</strong></li>
-<li><strong>Game data</strong> — scores and play history, progress, virtual currency, skins, missions, achievements, and settings, stored on our servers for cloud save, leaderboards, and PvP.</li>
+<li><strong>Nickname</strong> — the name you choose. <strong>It is shown publicly to other players on leaderboards and in 1v1 races.</strong></li>
+<li><strong>Game data</strong> — scores and play history (including your flight recordings from 1v1 races), progress, virtual currency, skins, missions, achievements, and settings, stored on our servers for cloud save, leaderboards, and 1v1 races (your recordings are replayed as opponents for other players).</li>
 <li><strong>Purchase history</strong> — in-app purchase records and receipts issued by the Apple App Store or Google Play, used to verify purchases, grant items, and prevent fraud. We never access your payment card details.</li>
 <li><strong>Device information</strong> — device model, OS version, language, app version, and device/installation identifiers, for compatibility, error analysis, and fraud prevention.</li>
 <li><strong>Advertising identifier</strong> — on iOS, the IDFA is collected <strong>only if you allow tracking</strong> via the App Tracking Transparency prompt; on Android, the Google Advertising ID (GAID). Used by our ad partners for ad delivery, frequency capping, measurement, and fraud prevention.</li>
-<li><strong>Analytics</strong> — in-game events (session start/end, purchases, screen flow, etc.), processed with Unity Gaming Services to improve the game.</li>
+<li><strong>Analytics</strong> — in-game events (tutorial progress, session start/end and results, screen flow, ad views, purchase attempts and results, etc.), session information, and an analytics app-instance identifier, processed with Google Analytics for Firebase and Unity Gaming Services to improve the game.</li>
+<li><strong>Attribution data</strong> — the campaign or link that led to an install or launch (e.g., ad campaigns, shared links), used to measure marketing effectiveness (Google Analytics for Firebase).</li>
 <li><strong>Coarse location</strong> — country/region inferred from your IP address. We do not collect precise (GPS) location.</li>
 <li><strong>Crash and diagnostics</strong> — crash and error logs and performance diagnostics, to fix bugs and improve stability.</li>
 </ul>
 
 <h2>2. Third-Party Services</h2>
-<p>The game uses Supabase (authentication and server hosting), Unity Gaming Services / Unity Analytics (analytics and diagnostics), Apple (Sign in with Apple, App Store payments), and Google (Google sign-in, Google Play payments). Each processes data under its own privacy policy, linked above.</p>
+<p>The game uses Supabase (authentication and server hosting), Unity Gaming Services / Unity Analytics (analytics and diagnostics), Google (Google Analytics for Firebase and BigQuery — analytics and marketing measurement), Apple (Sign in with Apple, App Store payments), and Google (Google sign-in, Google Play payments). Each processes data under its own privacy policy, linked above. Analytics data does not include your nickname, email, or account ID, and analytics events are collected only after you accept the terms.</p>
 
 <h2>3. Advertising Partners</h2>
-<p>The game shows ads. Ad partners use advertising identifiers, device information, and IP address (coarse location) to serve and measure ads. Current partners: <strong>Unity LevelPlay (ironSource)</strong> mediation and <strong>Unity Ads</strong>. Additional partners (e.g., AppLovin, Google AdMob) may be added, and this list will be updated when they are. You can opt out of personalized ads by not allowing tracking on iOS (Settings → Privacy &amp; Security → Tracking) or by resetting/deleting your advertising ID on Android (Settings → Privacy → Ads, or Settings → Google → Ads). You may still see ads, but they will not be personalized.</p>
+<p>The game shows ads. Ad partners use advertising identifiers, device information, and IP address (coarse location) to serve and measure ads. Current partners: <strong>Unity LevelPlay (ironSource)</strong> mediation, <strong>Unity Ads</strong>, <strong>Google AdMob</strong>, <strong>Digital Turbine (DT Exchange)</strong>, <strong>Liftoff Monetize (Vungle)</strong>, <strong>Meta Audience Network</strong>, <strong>Mintegral</strong>, and <strong>InMobi</strong> — privacy policies: <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">Unity</a> · <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google AdMob</a> · <a href="https://www.digitalturbine.com/legal/privacy-policy" target="_blank" rel="noopener">Digital Turbine</a> · <a href="https://liftoff.io/privacy-policy/" target="_blank" rel="noopener">Liftoff</a> · <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta</a> · <a href="https://www.mintegral.com/en/privacy" target="_blank" rel="noopener">Mintegral</a> · <a href="https://advertising.inmobi.com/privacy-policy" target="_blank" rel="noopener">InMobi</a>. Partners may be added or changed, and this list will be updated when they are. You can opt out of personalized ads by not allowing tracking on iOS (Settings → Privacy &amp; Security → Tracking) or by resetting/deleting your advertising ID on Android (Settings → Privacy → Ads, or Settings → Google → Ads). You may still see ads, but they will not be personalized.</p>
 
 <h2>4. International Transfers</h2>
-<p>To provide the service, data is stored and processed on servers outside Korea: Supabase (game server, Australia region), Unity (analytics and ads, United States and elsewhere), and Apple/Google (sign-in and payments).</p>
+<p>To provide the service, data is stored and processed on servers outside Korea: Supabase (game server, Australia region), Unity (analytics and ads, United States and elsewhere), Google (analytics, United States), the advertising partners in section 3 (ad delivery and measurement, United States and elsewhere), and Apple/Google (sign-in and payments). Analytics (Google Analytics for Firebase): recipient Google LLC; country United States; transferred over the network (TLS) while you use the game; items: analytics app-instance identifier, device information, gameplay events, attribution data, coarse location, and advertising identifier (on iOS only if you allow tracking); purpose: usage analytics and marketing measurement; retention: 14 months from collection (copies in our analytics storage are kept within this period). If you do not want your data transferred abroad, you can delete your account and stop using the game.</p>
 
 <h2>5. Retention &amp; Deletion</h2>
-<p>Data is retained while you use the service. You can permanently delete your account and all associated data at any time in-game via <strong>Home menu (☰) → Account → Delete Account</strong>. Deletion takes effect immediately on our servers; purchase-verification and anti-fraud records are kept only as long as required by law.</p>
+<p>Data is retained while you use the service. You can permanently delete your account and all associated data at any time in-game via <strong>Home menu (☰) → Account → Delete Account</strong>. Deletion takes effect immediately on our servers; purchase-verification and anti-fraud records are kept only as long as required by law. Analytics data is stored only under an analytics app-instance identifier that is not linked to your account, so it is not removed by account deletion; it is deleted automatically 14 months after collection. Your 1v1 race flight recordings (including score and skin) may remain after account deletion as anonymous opponents for other players: your nickname is replaced with a random name and the recording is no longer linked to any account.</p>
 
 <h2>6. Children</h2>
 <p>The game is not directed at children under 13, and we do not knowingly collect personal information from children.</p>
@@ -118,7 +128,7 @@
     <span><b>주소</b> 서울특별시 서초구 청계산로 201, 204호</span>
     <span><b>이메일</b> <a href="mailto:support@whyplanet.net">support@whyplanet.net</a></span>
   </div>
-  © 2026 WhyPlanet · 와이플래닛 · 최종 수정 2026-09-27
+  © 2026 WhyPlanet · 와이플래닛 · 최종 수정 2026-11-07
 </footer>
 </div>
 </body>
