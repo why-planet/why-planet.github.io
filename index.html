@@ -315,7 +315,7 @@ footer a.privacy { color: var(--ink); font-weight: 700; }
         </div>
       </article>
 
-      <!-- ===== Hometown Smash (2026-11-06: App Store·Google Play 심사 중, 캐나다·호주 먼저) ===== -->
+      <!-- ===== Hometown Smash (2026-11-08: Google Play 출시 · 144개국 / App Store 1.0.1 심사 중) ===== -->
       <article class="game-card" id="hometown-smash">
         <div class="game-body">
           <div class="game-head">
@@ -331,7 +331,7 @@ footer a.privacy { color: var(--ink); font-weight: 700; }
           <p class="game-desc">패티 할머니가 오래된 잡화점을 다시 열어요. 천장까지 쌓인 깡통·나무 상자·털실·잼병을 톡 눌러 공으로 무너뜨리고 탁자 위를 싹 비워 보세요. 진짜 물리로 무너지는 500개의 판, 판을 다 치우면 나오는 100개가 넘는 보물과 할머니가 들려주는 이야기, 축제 로켓·무쇠공 같은 도움 아이템이 기다려요.</p>
           <p class="game-desc en">Patty is reopening her old general store, and the storeroom is piled to the rafters. Tap any piece to fire a ball, knock everything off the table, and watch real physics bring it all down. 500 levels, over 100 keepsakes to find (each with a story from Patty's life), and handy helpers like Festival Rockets and the Iron Ball.</p>
           <div class="chips">
-            <span class="chip status">심사 중 · 캐나다·호주 먼저 출시 · In review</span>
+            <span class="chip status">Google Play 출시 · iOS 출시 예정</span>
             <span class="chip">iOS · Android</span>
             <span class="chip">500판 · 500 levels</span>
           </div>
@@ -352,7 +352,7 @@ footer a.privacy { color: var(--ink); font-weight: 700; }
           <img src="assets/hometown/shots/ko/06.webp" data-shot="06" alt="홈타운 스매시 스크린샷 6" width="540" height="1173" loading="lazy" decoding="async">
           </div>
 
-          <!-- Store buttons stay "Coming soon" until HOMETOWN_STORE_URLS (script below) gets the store links on launch day. -->
+          <!-- Store buttons stay "Coming soon" until HOMETOWN_STORE_URLS (script below) has that store's link. -->
           <div class="stores">
             <span class="store-btn soon" data-store="ios" aria-disabled="true">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
@@ -403,9 +403,12 @@ const STORE_URLS = {
   ios: "",                                                                          // App Store 공개 날 → "https://apps.apple.com/app/id6761355306" (App ID 6761355306)
   android: "https://play.google.com/store/apps/details?id=com.whyplanet.skybounce"  // Google Play
 };
-// Hometown Smash (2026-11-06 심사 중) — 공개되면 주소를 넣는다: ios "https://apps.apple.com/app/id6817217849",
-// android "https://play.google.com/store/apps/details?id=com.whyplanet.hometownsmash"
-const HOMETOWN_STORE_URLS = { ios: "", android: "" };
+// Hometown Smash — 2026-11-08 Google Play 출시(144개국) · App Store 1.0.1 심사 중 → 공개되는 날 ios "https://apps.apple.com/app/id6817217849"
+// (Play 링크의 referrer = 사이트에서 온 설치를 광고 설치와 구분하는 표시)
+const HOMETOWN_STORE_URLS = {
+  ios: "",
+  android: "https://play.google.com/store/apps/details?id=com.whyplanet.hometownsmash&referrer=utm_source%3Dwhyplanet%26utm_medium%3Dwebsite%26utm_campaign%3Dhome"
+};
 // ============================================================
 
 (function () {
@@ -419,6 +422,9 @@ const HOMETOWN_STORE_URLS = { ios: "", android: "" };
     if (small) small.textContent = el.dataset.store === "ios" ? "Download on the" : "Get it on";
     el.replaceWith(a);
   });
+  // 두 스토어가 다 열리면 홈타운 상태 칩도 지운다(한쪽만 열린 동안은 「Google Play 출시 · iOS 출시 예정」 그대로)
+  if (Object.keys(HOMETOWN_STORE_URLS).every(function (k) { return !!HOMETOWN_STORE_URLS[k]; }))
+    document.querySelectorAll("#hometown-smash .chip.status").forEach(function (c) { c.remove(); });
   if (STORES_LIVE) {
     document.querySelectorAll("#sky-bounce .store-btn[data-store]").forEach(function (el) {
       var url = STORE_URLS[el.dataset.store];
