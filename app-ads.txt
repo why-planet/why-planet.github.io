@@ -886,3 +886,6 @@ xandr.com, 16856, RESELLER
 bigo.sg, 7id17wm5ly, RESELLER
 rubiconproject.com, 28409, RESELLER, 0bfd66d529a55807
 monetrix.ai, 10697, RESELLER
+
+# InMobi (Unity LevelPlay bidding) — 2026-11-11
+inmobi.com, 0672ad54e720496cae9a3c918d0134b3, DIRECT, 83e75a7ae333ca9d
